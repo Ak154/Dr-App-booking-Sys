@@ -1,0 +1,122 @@
+.main {
+    display: flex;
+    height: 100vh;
+}
+
+.layout {
+    display: flex;
+    width: 100%;
+}
+
+.sidebar {
+    background-color: #5d8c9b;
+    width: 250px;
+    min-height: 100vh;
+    transition: width 0.3s ease-in-out;
+    overflow: hidden;
+    position: relative;
+}
+
+.sidebar.collapsed {
+    width: 60px;
+}
+
+.sidebar-header {
+    padding: 15px;
+    color: #ffffff;
+    text-align: center;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.role {
+    font-size: 14px;
+    margin-top: 5px;
+    opacity: 1;
+    transition: opacity 0.3s;
+}
+
+.sidebar.collapsed .role {
+    opacity: 0;
+}
+
+.menu {
+    margin-top: 10px;
+}
+
+.menu-item {
+    display: flex;
+    align-items: center;
+    padding: 12px 15px;
+    color: white;
+    cursor: pointer;
+    transition: background 0.3s;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.menu-item i {
+    font-size: 18px;
+    margin-right: 10px;
+}
+
+.menu-item a {
+    text-decoration: none;
+    color: white;
+    transition: opacity 0.3s;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.sidebar.collapsed .menu-item a {
+    display: inline-block;
+}
+
+.menu-item:hover,
+.active-menu-item {
+    background-color: #133e3e;
+}
+
+.content {
+    flex: 1;
+    padding: 15px;
+}
+
+.header {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    background-color: #ffffff;
+    padding: 10px 20px;
+    border-bottom: 1px solid #ddd;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Sidebar Toggle Icon */
+.sidebar-toggle {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    font-size: 22px;
+    cursor: pointer;
+    color: white;
+    background: none;
+    border: none;
+    outline: none;
+}
+
+/* When sidebar is collapsed */
+.sidebar.collapsed .sidebar-toggle {
+    right: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+}
